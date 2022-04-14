@@ -1,6 +1,12 @@
+drivers/clk/clk.c
+drivers/clk/clk-conf.c
+drivers/clk/Kconfig
+drivers/clk/Makefile
 drivers/clk/adi/Kconfig
 drivers/clk/adi/Makefile
 drivers/clk/adi/clk-ad9545-i2c.c
 drivers/clk/adi/clk-ad9545-spi.c
 drivers/clk/adi/clk-ad9545.c
 drivers/clk/adi/clk-ad9545.h
+include/dt-bindings/clock/ad9545.h
+drivers/clk/clk-adjustable-rate.c
