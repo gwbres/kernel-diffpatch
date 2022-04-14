@@ -72,6 +72,22 @@ def main (argv):
         if exists(repo +"/" +f):
             # patch to generate
             print("modification patch : \"{}\"".format(patch))
+            cmd = [
+                "diff", 
+                "-ruN", 
+                "{}/{}".format(repo, f),
+                "{}/{}".format(clone_target, f),
+            ]
+            # run `diff`
+            ret = subprocess.run(cmd, capture_output=True)
+            stdout = ret.stdout.decode("utf-8")
+            # need to replace, in generated patch
+            # the /x/y/z prefix of the local repo,
+            # so this patch can apply in tree
+            # produce patch  
+            with open("patches/{}".format(patch), "w") as fd:
+                fd.write(stdout)
+
         else:
             # patch to generate
             print("new patch : {}".format(patch))
@@ -91,7 +107,6 @@ def main (argv):
             # produce patch  
             with open("patches/{}".format(patch), "w") as fd:
                 fd.write(stdout)
-
         count += 1
 
 if __name__ == "__main__":
