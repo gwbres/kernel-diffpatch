@@ -19,6 +19,8 @@ def git_clone (url, branch):
     command("git clone {} --branch {}".format(url, branch))
 def mkdir (path):
     command("mkdir -p {}".format(path))
+def rmf (path)
+    command("rm -f {}".format(path))
 
 def file_suffix (path):
     """ truncates x/y/path into "path" """
@@ -52,6 +54,7 @@ def main (argv):
         git_clone(url, tag)
 
     # build products
+    rmf("patches/*.patch")
     mkdir("patches")
     # parse products
     with open("files.txt", "r") as fd:
