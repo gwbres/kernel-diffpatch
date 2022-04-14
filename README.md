@@ -45,6 +45,11 @@ Now apply custom features to enhance our local repo:
 ╰─$ patch -p1 < $kernel-diffpatch/patches/*.patch
 ```
 
+Obviously, this package does not garantee the patch serie will apply correctly.
+It is up to the user to:
+* provide all custom dependencies, needed by all new custom features
+* fix patch that would not apply
+
 You don't have to `diff` with Analog Devices's fork, 
 you can use any remote linux kernel :
 ```shell
@@ -58,4 +63,3 @@ You can specify a non default branch to work with:
     --url https://github.com/xilinx/linux-xlnx \
         --tag 2020.01
 ```
-
