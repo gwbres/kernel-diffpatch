@@ -10,8 +10,9 @@ directly applied and built `in tree`.
 I personnaly use this script with Analog Devices's fork,
 which is usually merged into Xilinx's kernel.
 
-As an example, the makefile is set to 
-Analog Devices's repo and we generate a couple of patches to embed some of their custom drivers.  
+As an example, the remote repo is set to 
+Analog Devices's kernel, and we generate 
+a couple of patches to embed some of their custom drivers.  
 
 This assumes you have a local linux kernel `diff` with, specificed with `--repo /foo/bar`.   
 You can control the source repo, containing custom content with `--url https://foo/bar`.   
