@@ -1,0 +1,6 @@
+drivers/clk/adi/Kconfig
+drivers/clk/adi/Makefile
+drivers/clk/adi/clk-ad9545-i2c.c
+drivers/clk/adi/clk-ad9545-spi.c
+drivers/clk/adi/clk-ad9545.c
+drivers/clk/adi/clk-ad9545.h
