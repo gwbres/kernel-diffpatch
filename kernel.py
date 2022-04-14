@@ -19,7 +19,7 @@ def git_clone (url, branch):
     command("git clone {} --branch {}".format(url, branch))
 def mkdir (path):
     command("mkdir -p {}".format(path))
-def rmf (path)
+def rmf (path):
     command("rm -f {}".format(path))
 
 def file_suffix (path):
