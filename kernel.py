@@ -88,6 +88,7 @@ def main (argv):
             # the /x/y/z prefix of the local repo,
             # so this patch can apply in tree
             # produce patch  
+            stdout = stdout.replace("{}/{}".format(repo, f), "")
             with open("patches/{}".format(patch), "w") as fd:
                 fd.write(stdout)
 
@@ -106,7 +107,7 @@ def main (argv):
             # need to replace, in generated patch
             # the /x/y/z prefix of the local repo,
             # so this patch can apply in tree
-            stdout = stdout.replace("{}/{}".format(repo, f), "null")
+            stdout = stdout.replace("{}/{}".format(repo, f), "")
             # produce patch  
             with open("patches/{}".format(patch), "w") as fd:
                 fd.write(stdout)
