@@ -21,7 +21,7 @@ Control the custom content to extract from the remote branch, with the `files.tx
 ```shell
 # list of custom ADI's work
 # we would like to enhance our local repo with:
-cat files.txt 
+╰─$ cat files.txt 
 drivers/clk/adi/Kconfig
 drivers/clk/adi/Makefile
 drivers/clk/adi/clk-ad9545-i2c.c
@@ -41,7 +41,6 @@ new patch : 0006-drivers-clk-adi-clk-ad9545.patch
 
 Now apply custom features to enhance our local repo:
 ```shell
-cd /tmp/linux-custom
 ╰─$ cd /tmp/linux-custom
 ╰─$ patch -p1 < $kernel-diffpatch/patches/*.patch
 ```
