@@ -4,20 +4,25 @@ Scripts to generate patch series between two Kernel forks.
 
 Sometimes you want to retrieve custom features from a given fork
 and apply them to another. This patch generator helps you
-extract custom content and generate a patch serie that can be
-directly applied and built `in tree`.
+extract custom content and generate a patch serie to export custom features into another kernel.
+
+The patch serie is then applied `in tree`, meaning we patch a kernel to enhance it.
 
 I personnaly use this script with Analog Devices's fork,
 which is usually merged into Xilinx's kernel.
 
 As an example, the remote repo is set to 
 Analog Devices's kernel, and we generate 
-a couple of patches to embed some of their custom drivers.  
+a couple of patches to embed some of their custom drivers into another kernel.  
 
-This assumes you have a local linux kernel `diff` with, specificed with `--repo /foo/bar`.   
-You can control the source repo, containing custom content with `--url https://foo/bar`.   
-You can use a specific remote branc with `--branch custom`.   
-Control the custom content to extract from the remote branch, with the `files.txt` listing.
+This assumes you have a local linux kernel to `diff` with.
+List of supported flags:
+
+* `--repo /foo/bar` to specify the local repo we will `diff` the remote with
+* `--url https://foo/bar` to control which remote kernel we `diff` with
+* `--branch custom` if you don't want to download `master` from remote kernel
+* `files.txt` contains the list of custom features we are interested in,
+because we don't run a complete `diff` nor `diff` the complete git history
 
 ```shell
 # list of custom ADI's work
